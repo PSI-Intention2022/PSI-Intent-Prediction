@@ -41,7 +41,7 @@ def get_dataloader(args, shuffle_train=True, drop_last_train=True):
 def get_train_val_data(data, args, overlap=0.5):  # overlap==0.5, seq_len=15
     seq_len = args.max_track_size
     overlap = overlap
-    tracks = get_tracks(data, seq_len, args.observe_length, overlap)
+    tracks = get_tracks(data, seq_len, args.observe_length, overlap, args)
     print("Train/Val Tracks: ", tracks.keys())
     return tracks
 
@@ -50,12 +50,12 @@ def get_test_data(data, args, overlap=1):  # overlap==0.5, seq_len=15
     # return splited train/val dataset
     seq_len = args.max_track_size
     overlap = overlap
-    tracks = get_tracks(data, seq_len, args.observe_length, overlap)
+    tracks = get_tracks(data, seq_len, args.observe_length, overlap, args)
     print("Test Tracks: ", tracks.keys())
     return tracks
 
 
-def get_tracks(data, seq_len, observed_seq_len, overlap):
+def get_tracks(data, seq_len, observed_seq_len, overlap, args):
     overlap_stride = observed_seq_len if overlap == 0 else \
         int((1 - overlap) * observed_seq_len)  # default: int(0.5*15) == 7
 
@@ -76,8 +76,8 @@ def get_tracks(data, seq_len, observed_seq_len, overlap):
             track = d[k][track_id]
             ''' There are some sequences not adjacent '''
             frame_list = data['frame'][track_id]
-            if len(frame_list) < 60:
-                print('too few frames: ', d['video_id'][track_id], d['ped_id'][track_id])
+            if len(frame_list) < args.max_track_size: #60:
+                print('too few frames: ', d['video_id'][track_id][0], d['ped_id'][track_id][0])
                 continue
             splits = []
             start = -1

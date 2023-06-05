@@ -77,22 +77,21 @@ if __name__ == '__main__':
         args.database_file = 'traj_database_train.pkl'
         args.intent_model = False # if (or not) use intent prediction module to support trajectory prediction
         args.traj_model = True
-
-    args.traj_loss = ['bbox_l1']
+        args.traj_loss = ['bbox_l1']
 
     args.seq_overlap_rate = 0.9 # overlap rate for trian/val set
     args.test_seq_overlap_rate = 1 # overlap for test set. if == 1, means overlap is one frame, following PIE
     args.observe_length = 15
-    if args.task_name == 'ped_nitent':
+    if args.task_name == 'ped_intent':
         args.predict_length = 1 # only make one intent prediction
-        args.max_track_size = args.observe_length + args.predict_length
     elif args.task_name == 'ped_traj':
         args.predict_length = 45
-        args.max_track_size = args.observe_length + args.predict_length
-        args.crop_mode = 'enlarge'
-        args.normalize_bbox = None
-        # 'subtract_first_frame' #here use None, so the traj bboxes output loss is based on origianl coordinates
-        # [None (paper results) | center | L2 | subtract_first_frame (good for evidential) | divide_image_size]
+
+    args.max_track_size = args.observe_length + args.predict_length
+    args.crop_mode = 'enlarge'
+    args.normalize_bbox = None
+    # 'subtract_first_frame' #here use None, so the traj bboxes output loss is based on origianl coordinates
+    # [None (paper results) | center | L2 | subtract_first_frame (good for evidential) | divide_image_size]
 
     # Model
     args.model_name = 'lstm_int_bbox'  # LSTM module, with bboxes sequence as input, to predict intent

@@ -49,8 +49,8 @@ def get_intent_gt(dataloader, output_path, args):
             if fid not in dt[vid][pid]:
                 dt[vid][pid][fid] = {}
             dt[vid][pid][fid]['intent'] = gt_int
-            # dt[vid][pid][fid]['intent_prob'] = gt_int_prob
-            # dt[vid][pid][fid]['disagreement'] = gt_disgr
+            dt[vid][pid][fid]['intent_prob'] = gt_int_prob
+            dt[vid][pid][fid]['disagreement'] = gt_disgr
 
     with open(output_path, 'w') as f:
         json.dump(dt, f)
