@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
 
     # Train
-    args.epochs = 100
+    args.epochs = 1
     args.batch_size = 128
     args.lr = 1e-3
     args.loss_weights = {
