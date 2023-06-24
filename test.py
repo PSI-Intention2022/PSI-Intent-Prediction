@@ -83,5 +83,5 @@ def predict_intent(model, dataloader, args, dset='test'):
             dt[vid][pid][fid]['intent'] = int_pred
             dt[vid][pid][fid]['intent_prob'] = int_prob
 
-    with open(os.path.join(args.checkpoint_path, 'results', f'{dset}_intent_prediction.json'), 'w') as f:
+    with open(os.path.join(args.checkpoint_path, 'results', f'{dset}_intent_pred.json'), 'w') as f:
         json.dump(dt, f)

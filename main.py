@@ -35,7 +35,7 @@ def main(args):
     if not os.path.exists(val_gt_file):
         get_intent_gt(val_loader, val_gt_file, args)
     predict_intent(model, val_loader, args, dset='val')
-    evaluate_intent(val_gt_file, args.checkpoint_path + '/results/val_intent_prediction.json', args)
+    evaluate_intent(val_gt_file, args.checkpoint_path + '/results/val_intent_pred.json', args)
 
     # ''' 4. Test '''
     # test_gt_file = './test_gt/test_intent_gt.json'
