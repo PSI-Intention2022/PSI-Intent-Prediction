@@ -7,7 +7,7 @@
 ([**PSI2.0**](https://github.com/PSI-Intention2022/PSI-Dataset) is an extension dataset of [**PSI1.0**](http://situated-intent.net/) dataset.)
 
 ### :bookmark: News :
-- 20230910: All PSI data including videos, CV annotations, and Cognitive Annotation (PSI1.0 & PSI 2.0) are public for download and future exploration! [[Google Drive](https://drive.google.com/drive/folders/1w_psSDwB_z7alJO5uCQ8d28NiOjRMK-g?usp=sharing)] :sparkler::zap:
+- 20230910: All PSI data including videos, CV annotations, and Cognitive Annotation (PSI1.0 & PSI 2.0) are public for download and future exploration! ~~[[Google Drive]()]~~ [[PSI Homepage](http://pedestriandataset.situated-intent.net)] :sparkler::zap:
 - 20230606: The official [[Homepage](https://psi-intention2022.github.io)], [[GitHub](https://github.com/PSI-Intention2022/PSI-Competition)], and [[CodaLab]() ([Track 1](https://codalab.lisn.upsaclay.fr/competitions/13808#phases))([Track 2](https://codalab.lisn.upsaclay.fr/competitions/13812?secret_key=7a566b48-693d-47cf-9de8-d43e6b6fa512#phases))([Track 3](https://codalab.lisn.upsaclay.fr/competitions/13818?secret_key=bc6903e6-0a62-4df2-bb14-b31ae7b40a63#participate))] of the IEEE ITSS Student Competition are public. 
 
 ---
@@ -163,12 +163,12 @@ Acc: overall accuracy
 mAcc: class-wise mean accuracy
 F1: F1 score
 ```
-|Dataset|split|Acc|mAcc|F1 |
+<!-- |Dataset|split|Acc|mAcc|F1 |
 |:---|:---|:---|:---|:---|
 |PSI2.0|val|65.12|56.49|54.01|
 |PSI2.0|test|58.37|51.54|47.87|
 |PSI1.0|val|69.26|50.90|50.86|
-|PSI1.0|test|63.56|53.13|50.55|
+|PSI1.0|test|63.56|53.13|50.55| -->
 
 (4). Environment
 ```buildoutcfg
